@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="body">
+        <h3 class="text-center">Sign Up</h3>
+        <form #f="ngForm" (ngSubmit)="signup(f)" class="form">
+            <label class="control-label bold small text-uppercase text-secondary">İsim:</label>
+            <div class="icon">
+            <input ngModel name="name" #name="ngModel" type="text" class="form-control form-control-rounded" placeholder="Your Name" required>
+            <fa-icon [icon]="fa.user" class="icon"></fa-icon>
+            <div class="alert alert-danger" *ngIf="name.invalid && name.touched">İsim Gerekli!</div>
+            </div>
+            
+
+            <input ngModel name="email" #email="ngModel" type="email" class="form-control" placeholder="Email" required email>
+            <div class="alert alert-danger" *ngIf="email.touched && email.errors?.required">Email Gerekli!</div>
+            <div class="alert alert-danger" *ngIf="email.touched && email.errors?.email">Girişiniz E-Posta Formatıyla Eşleşmiyor!</div>
+
+            <input ngModel name="password" #password="ngModel" type="password" class="form-control" placeholder="Password" required minlength="6">
+            <div class="alert alert-danger" *ngIf="password.touched && password.errors?.required">Parola Gerekli!</div>
+            <div class="alert alert-danger" *ngIf="password.touched && password.errors?.minlength">Parola En Fazla 6 Karakter Olmalı!</div>
+
+            <input ngModel name="passwordConfirm" #passwordConfirm="ngModel" type="password" class="form-control" placeholder="Confirm Password" required>
+            <div class="alert alert-danger" *ngIf="passwordConfirm.invalid && passwordConfirm.touched">Yeniden Parola Gerekli!</div>
+            <div class="alert alert-danger" *ngIf="passwordConfirm.value !== password.value && passwordConfirm.touched ">Maalesef! Parolalar Eşleşmemekte!</div>
+
+            <input ngModel name="address" #address="ngModel" type="text" class="form-control" placeholder="Address" required>
+            <div class="alert alert-danger" *ngIf="address.invalid && address.touched">Adres Gerekli!</div>
+
+            <button class="btn btn-primary" [disabled]="passwordConfirm.value !== password.value || f.invalid" >Create Account</button> <!--inputlar kurala uymadıgında butonu pasifleştirir-->
+        </form>
+        <br>
+        <div class="alert alert-danger" *ngIf="errorMessage"> {{ errorMessage }} </div>
+    </div>
+</div>

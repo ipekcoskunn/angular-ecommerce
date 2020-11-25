@@ -1,0 +1,31 @@
+<!-- About Page -->
+<div class="about">
+    <section class="section">
+        <div class="container bring-to-front pt-0 pb-50">
+            <div class="section-heading text-center">
+              <h2>About</h2>
+              <p class="lead text-secondary">
+                These amazing people have made possible to stay where we are
+              </p>
+            </div>
+          </div>
+          <div class="section-heading text-center">
+              <h2>Our features stack</h2>
+              <p class="lead text-secondary">
+                Take the control of your web with DashCore. You can customize the theme
+                according to your needs or just use the ready-to-use content we made for
+                you
+              </p>
+              <div class="row gap-y">
+                <div class="col-md-3" *ngFor="let feature of features">
+                    <div class="card">
+                      <div class="card-body text-center">
+                          <p class="mb-0">{{ feature.title }}</p>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+      </section>
+</div>
+  

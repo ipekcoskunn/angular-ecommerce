@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="body">
+        <h3 class="text-center">Login</h3>
+        <form #f="ngForm" (ngSubmit)="login(f)" class="form">        
+            <input ngModel name="email" #email="ngModel" type="email" class="form-control" placeholder="Email" required email>
+            <div class="alert alert-danger" *ngIf="email.touched && email.errors?.required">Email Gerekli!</div>
+            <div class="alert alert-danger" *ngIf="email.touched && email.errors?.email">Girişiniz E-Posta Formatıyla Eşleşmiyor!</div>
+
+            <input ngModel name="password" #password="ngModel" type="password" class="form-control" placeholder="Password" required minlength="6">
+            <div class="alert alert-danger" *ngIf="password.touched && password.errors?.required">Parola Gerekli!</div>
+            <div class="alert alert-danger" *ngIf="password.touched && password.errors?.minlength">Parola En Fazla 6 Karakter Olmalı!</div>
+
+            <button class="btn btn-primary" [disabled]="f.invalid" >Login</button> <!--inputlar kurala uymadıgında butonu pasifleştirir-->
+        </form>
+    </div>
+</div>

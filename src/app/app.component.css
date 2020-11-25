@@ -1,0 +1,14 @@
+app-navbar {
+    width: 100%;
+    margin-bottom: 70px;
+}
+router-outlet{
+    height: 100%;
+}
+app-footer{
+    position: relative;
+    bottom:0;
+    width:100%;   /* footer yüksekliği */
+    background: rgb(236, 243, 243);
+    text-align:center;
+}

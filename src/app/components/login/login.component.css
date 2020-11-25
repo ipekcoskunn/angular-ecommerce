@@ -1,0 +1,18 @@
+.form-control{
+    margin-top: 10pt;
+}
+.body{
+    padding-bottom: 100px;
+}
+.form{
+    width: 600px;
+}
+.alert.alert-danger{
+    height: 40;
+    background-color: rgba(241, 194, 194, 0.479);
+    margin-top: 7px;
+    border-width: 0px 0px 2px 0px;
+    border-style: solid;
+    border-color:  rgba(148, 116, 116, 0.479);
+    
+}
